@@ -33,7 +33,7 @@ namespace WebAPI.Controllers
             {
                 return Ok(result);
             }
-            return Ok(result);
+            return BadRequest(result);
         }
 
         [HttpGet("getbyid")]
@@ -44,12 +44,23 @@ namespace WebAPI.Controllers
             {
                 return Ok(result);
             }
-            return Ok(result);
+            return BadRequest(result);
         }
-        [HttpPost("add")]
+        [HttpPost("add")]                                                                               
         public IActionResult Add(Product product)
         {
             var result = _productService.Add(product);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet("getproductdetails")]
+        public IActionResult GetProductDetails()
+        {
+            var result = _productService.GetProductDetails();
             if (result.Success)
             {
                 return Ok(result);
