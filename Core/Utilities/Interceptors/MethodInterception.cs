@@ -19,7 +19,7 @@ namespace Core.Utilities.Interceptors
         {
             var isSuccess = true;
             OnBefore(invocation);
-            try
+            try                               
             {
                 invocation.Proceed();
             }
