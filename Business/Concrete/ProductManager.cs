@@ -34,7 +34,7 @@ namespace Business.Concrete
         }
 
         //Claim , product.add yada admin claimlerine sahip olması gerekir.
-        [SecuredOperation("product.add")]
+        [SecuredOperation("product.add,admin")]
         [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {

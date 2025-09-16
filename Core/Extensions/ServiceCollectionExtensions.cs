@@ -18,8 +18,8 @@ namespace Core.Extensions
                 module.Load(serviceCollection);  
             }
 
-            return serviceCollection;
-            //return ServiceTool.Create(serviceCollection);
+            //return serviceCollection;
+            return ServiceTool.Create(serviceCollection);
         }
     }
 }
